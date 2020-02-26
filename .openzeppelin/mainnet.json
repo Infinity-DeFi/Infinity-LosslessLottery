@@ -1,0 +1,1859 @@
+{
+  "contracts": {
+    "PoolSai": {
+      "address": "0xdD581eB0779196C43f64084a84f98DD496626b71",
+      "constructorCode": "608060405234801561001057600080fd5b5061498d806100206000396000f3fe",
+      "bodyBytecodeHash": "67e9887edc2ca93439ed4572d8b04df5ef282a9feeff427fc7fd9a21ed1f0f41",
+      "localBytecodeHash": "5f18d2aa3d91176f479167d818c7373f9387f2b898ba9b98ced71b61884fd69f",
+      "deployedBytecodeHash": "7c1a7cdae361fa86a3880fed5a93b4e1d07b544329852fe72850f2a985319a11",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_mapping<t_uint256>": {
+          "id": "t_mapping<t_uint256>",
+          "valueType": "t_uint256",
+          "label": "mapping(key => uint256)",
+          "kind": "mapping"
+        },
+        "t_struct<BasePool.Draw>": {
+          "id": "t_struct<BasePool.Draw>",
+          "kind": "struct",
+          "label": "BasePool.Draw",
+          "members": [
+            {
+              "label": "feeFraction",
+              "astId": 3254,
+              "type": "t_uint256",
+              "src": "6878:19:17"
+            },
+            {
+              "label": "feeBeneficiary",
+              "astId": 3256,
+              "type": "t_address",
+              "src": "6920:22:17"
+            },
+            {
+              "label": "openedBlock",
+              "astId": 3258,
+              "type": "t_uint256",
+              "src": "6948:19:17"
+            },
+            {
+              "label": "secretHash",
+              "astId": 3260,
+              "type": "t_bytes32",
+              "src": "6973:18:17"
+            },
+            {
+              "label": "entropy",
+              "astId": 3262,
+              "type": "t_bytes32",
+              "src": "6997:15:17"
+            },
+            {
+              "label": "winner",
+              "astId": 3264,
+              "type": "t_address",
+              "src": "7018:14:17"
+            },
+            {
+              "label": "netWinnings",
+              "astId": 3266,
+              "type": "t_uint256",
+              "src": "7038:19:17"
+            },
+            {
+              "label": "fee",
+              "astId": 3268,
+              "type": "t_uint256",
+              "src": "7063:11:17"
+            }
+          ]
+        },
+        "t_bytes32": {
+          "id": "t_bytes32",
+          "kind": "elementary",
+          "label": "bytes32"
+        },
+        "t_mapping<t_struct<BasePool.Draw>>": {
+          "id": "t_mapping<t_struct<BasePool.Draw>>",
+          "valueType": "t_struct<BasePool.Draw>",
+          "label": "mapping(key => BasePool.Draw)",
+          "kind": "mapping"
+        },
+        "t_struct<DrawManager.State>": {
+          "id": "t_struct<DrawManager.State>",
+          "kind": "struct",
+          "label": "DrawManager.State",
+          "members": [
+            {
+              "label": "sortitionSumTrees",
+              "astId": 5255,
+              "type": "t_struct<SortitionSumTreeFactory.SortitionSumTrees>",
+              "src": "2060:59:19"
+            },
+            {
+              "label": "consolidatedDrawIndices",
+              "astId": 5259,
+              "type": "t_mapping<t_uint256>",
+              "src": "2230:51:19"
+            },
+            {
+              "label": "latestDrawIndices",
+              "astId": 5263,
+              "type": "t_mapping<t_uint256>",
+              "src": "2384:45:19"
+            },
+            {
+              "label": "__deprecated__drawTotals",
+              "astId": 5267,
+              "type": "t_mapping<t_uint256>",
+              "src": "2520:52:19"
+            },
+            {
+              "label": "openDrawIndex",
+              "astId": 5269,
+              "type": "t_uint256",
+              "src": "2646:21:19"
+            },
+            {
+              "label": "__deprecated__committedSupply",
+              "astId": 5271,
+              "type": "t_uint256",
+              "src": "2745:37:19"
+            }
+          ]
+        },
+        "t_struct<SortitionSumTreeFactory.SortitionSumTrees>": {
+          "id": "t_struct<SortitionSumTreeFactory.SortitionSumTrees>",
+          "kind": "struct",
+          "label": "SortitionSumTreeFactory.SortitionSumTrees",
+          "members": [
+            {
+              "label": "sortitionSumTrees",
+              "astId": 22,
+              "type": "t_mapping<t_struct<SortitionSumTreeFactory.SortitionSumTree>>",
+              "src": "1037:54:0"
+            }
+          ]
+        },
+        "t_struct<SortitionSumTreeFactory.SortitionSumTree>": {
+          "id": "t_struct<SortitionSumTreeFactory.SortitionSumTree>",
+          "kind": "struct",
+          "label": "SortitionSumTreeFactory.SortitionSumTree",
+          "members": [
+            {
+              "label": "K",
+              "astId": 3,
+              "type": "t_uint256",
+              "src": "442:6:0"
+            },
+            {
+              "label": "stack",
+              "astId": 6,
+              "type": "t_array:dyn<t_uint256>",
+              "src": "690:12:0"
+            },
+            {
+              "label": "nodes",
+              "astId": 9,
+              "type": "t_array:dyn<t_uint256>",
+              "src": "712:12:0"
+            },
+            {
+              "label": "IDsToNodeIndexes",
+              "astId": 13,
+              "type": "t_mapping<t_uint256>",
+              "src": "878:41:0"
+            },
+            {
+              "label": "nodeIndexesToIDs",
+              "astId": 17,
+              "type": "t_mapping<t_bytes32>",
+              "src": "929:41:0"
+            }
+          ]
+        },
+        "t_array:dyn<t_uint256>": {
+          "id": "t_array:dyn<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "dyn",
+          "kind": "array",
+          "label": "uint256[]"
+        },
+        "t_mapping<t_bytes32>": {
+          "id": "t_mapping<t_bytes32>",
+          "valueType": "t_bytes32",
+          "label": "mapping(key => bytes32)",
+          "kind": "mapping"
+        },
+        "t_mapping<t_struct<SortitionSumTreeFactory.SortitionSumTree>>": {
+          "id": "t_mapping<t_struct<SortitionSumTreeFactory.SortitionSumTree>>",
+          "valueType": "t_struct<SortitionSumTreeFactory.SortitionSumTree>",
+          "label": "mapping(key => SortitionSumTreeFactory.SortitionSumTree)",
+          "kind": "mapping"
+        },
+        "t_struct<Roles.Role>": {
+          "id": "t_struct<Roles.Role>",
+          "kind": "struct",
+          "label": "Roles.Role",
+          "members": [
+            {
+              "label": "bearer",
+              "astId": 752,
+              "type": "t_mapping<t_bool>",
+              "src": "150:32:2"
+            }
+          ]
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        },
+        "t_struct<Blocklock.State>": {
+          "id": "t_struct<Blocklock.State>",
+          "kind": "struct",
+          "label": "Blocklock.State",
+          "members": [
+            {
+              "label": "lockedAt",
+              "astId": 5037,
+              "type": "t_uint256",
+              "src": "481:16:18"
+            },
+            {
+              "label": "unlockedAt",
+              "astId": 5039,
+              "type": "t_uint256",
+              "src": "503:18:18"
+            },
+            {
+              "label": "lockDuration",
+              "astId": 5041,
+              "type": "t_uint256",
+              "src": "527:20:18"
+            },
+            {
+              "label": "cooldownDuration",
+              "astId": 5043,
+              "type": "t_uint256",
+              "src": "553:24:18"
+            }
+          ]
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 3054,
+          "type": "t_bool",
+          "src": "757:24:16"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 3056,
+          "type": "t_bool",
+          "src": "876:25:16"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 3112,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:16"
+        },
+        {
+          "contract": "ReentrancyGuard",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/utils/ReentrancyGuard.sol",
+          "label": "_guardCounter",
+          "astId": 3016,
+          "type": "t_uint256",
+          "src": "733:29:15"
+        },
+        {
+          "contract": "ReentrancyGuard",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/utils/ReentrancyGuard.sol",
+          "label": "______gap",
+          "astId": 3049,
+          "type": "t_array:50<t_uint256>",
+          "src": "1563:29:15"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "cToken",
+          "astId": 3271,
+          "type": "t_address",
+          "src": "7148:21:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "nextFeeBeneficiary",
+          "astId": 3273,
+          "type": "t_address",
+          "src": "7240:33:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "nextFeeFraction",
+          "astId": 3275,
+          "type": "t_uint256",
+          "src": "7341:30:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "accountedBalance",
+          "astId": 3277,
+          "type": "t_uint256",
+          "src": "7419:31:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "balances",
+          "astId": 3281,
+          "type": "t_mapping<t_uint256>",
+          "src": "7519:46:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "draws",
+          "astId": 3285,
+          "type": "t_mapping<t_struct<BasePool.Draw>>",
+          "src": "7628:39:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "drawState",
+          "astId": 3287,
+          "type": "t_struct<DrawManager.State>",
+          "src": "7752:36:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "admins",
+          "astId": 3289,
+          "type": "t_struct<Roles.Role>",
+          "src": "7852:26:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "paused",
+          "astId": 3291,
+          "type": "t_bool",
+          "src": "7931:18:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "blocklock",
+          "astId": 3293,
+          "type": "t_struct<Blocklock.State>",
+          "src": "7954:34:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "poolToken",
+          "astId": 3295,
+          "type": "t_address",
+          "src": "7993:26:17"
+        },
+        {
+          "contract": "MCDAwarePool",
+          "path": "contracts/MCDAwarePool.sol",
+          "label": "scdMcdMigration",
+          "astId": 6322,
+          "type": "t_address",
+          "src": "2148:38:20"
+        },
+        {
+          "contract": "MCDAwarePool",
+          "path": "contracts/MCDAwarePool.sol",
+          "label": "saiPool",
+          "astId": 6324,
+          "type": "t_address",
+          "src": "2253:27:20"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "PoolDaiToken": {
+      "address": "0x5d6bdEb18BA6E2be5Cb87C7cFAee9CD07d000428",
+      "constructorCode": "608060405234801561001057600080fd5b50612dcc806100206000396000f3fe",
+      "bodyBytecodeHash": "24fc88da4aaa5a3db5637bf2d15a46d565568c51fe13daf0117f894b311151d6",
+      "localBytecodeHash": "9305ffd1817d8e1084f78afd5530ff3f58d4d8918cafc1bab581bc8aae9f4fe0",
+      "deployedBytecodeHash": "9305ffd1817d8e1084f78afd5530ff3f58d4d8918cafc1bab581bc8aae9f4fe0",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_string": {
+          "id": "t_string",
+          "kind": "elementary",
+          "label": "string"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        },
+        "t_mapping<t_uint256>": {
+          "id": "t_mapping<t_uint256>",
+          "valueType": "t_uint256",
+          "label": "mapping(key => uint256)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 3054,
+          "type": "t_bool",
+          "src": "757:24:16"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 3056,
+          "type": "t_bool",
+          "src": "876:25:16"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 3112,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:16"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_name",
+          "astId": 6636,
+          "type": "t_string",
+          "src": "3439:21:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_symbol",
+          "astId": 6638,
+          "type": "t_string",
+          "src": "3464:23:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_defaultOperatorsArray",
+          "astId": 6641,
+          "type": "t_array:dyn<t_address>",
+          "src": "3582:41:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_defaultOperators",
+          "astId": 6645,
+          "type": "t_mapping<t_bool>",
+          "src": "3713:51:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_operators",
+          "astId": 6651,
+          "type": "t_mapping<t_bool>",
+          "src": "3850:64:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_revokedDefaultOperators",
+          "astId": 6657,
+          "type": "t_mapping<t_bool>",
+          "src": "3918:78:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_allowances",
+          "astId": 6663,
+          "type": "t_mapping<t_uint256>",
+          "src": "4023:70:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_pool",
+          "astId": 6665,
+          "type": "t_address",
+          "src": "4140:23:21"
+        },
+        {
+          "contract": "RecipientWhitelistPoolToken",
+          "path": "contracts/RecipientWhitelistPoolToken.sol",
+          "label": "_recipientWhitelistEnabled",
+          "astId": 7734,
+          "type": "t_bool",
+          "src": "978:40:22"
+        },
+        {
+          "contract": "RecipientWhitelistPoolToken",
+          "path": "contracts/RecipientWhitelistPoolToken.sol",
+          "label": "_recipientWhitelist",
+          "astId": 7738,
+          "type": "t_mapping<t_bool>",
+          "src": "1089:53:22"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "PoolSaiToken": {
+      "address": "0xbACF2e665B37F713C159705F59f5349F78858C2d",
+      "constructorCode": "608060405234801561001057600080fd5b50612dcc806100206000396000f3fe",
+      "bodyBytecodeHash": "24fc88da4aaa5a3db5637bf2d15a46d565568c51fe13daf0117f894b311151d6",
+      "localBytecodeHash": "9305ffd1817d8e1084f78afd5530ff3f58d4d8918cafc1bab581bc8aae9f4fe0",
+      "deployedBytecodeHash": "9305ffd1817d8e1084f78afd5530ff3f58d4d8918cafc1bab581bc8aae9f4fe0",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_string": {
+          "id": "t_string",
+          "kind": "elementary",
+          "label": "string"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        },
+        "t_mapping<t_uint256>": {
+          "id": "t_mapping<t_uint256>",
+          "valueType": "t_uint256",
+          "label": "mapping(key => uint256)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 3054,
+          "type": "t_bool",
+          "src": "757:24:16"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 3056,
+          "type": "t_bool",
+          "src": "876:25:16"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 3112,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:16"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_name",
+          "astId": 6636,
+          "type": "t_string",
+          "src": "3439:21:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_symbol",
+          "astId": 6638,
+          "type": "t_string",
+          "src": "3464:23:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_defaultOperatorsArray",
+          "astId": 6641,
+          "type": "t_array:dyn<t_address>",
+          "src": "3582:41:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_defaultOperators",
+          "astId": 6645,
+          "type": "t_mapping<t_bool>",
+          "src": "3713:51:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_operators",
+          "astId": 6651,
+          "type": "t_mapping<t_bool>",
+          "src": "3850:64:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_revokedDefaultOperators",
+          "astId": 6657,
+          "type": "t_mapping<t_bool>",
+          "src": "3918:78:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_allowances",
+          "astId": 6663,
+          "type": "t_mapping<t_uint256>",
+          "src": "4023:70:21"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_pool",
+          "astId": 6665,
+          "type": "t_address",
+          "src": "4140:23:21"
+        },
+        {
+          "contract": "RecipientWhitelistPoolToken",
+          "path": "contracts/RecipientWhitelistPoolToken.sol",
+          "label": "_recipientWhitelistEnabled",
+          "astId": 7734,
+          "type": "t_bool",
+          "src": "978:40:22"
+        },
+        {
+          "contract": "RecipientWhitelistPoolToken",
+          "path": "contracts/RecipientWhitelistPoolToken.sol",
+          "label": "_recipientWhitelist",
+          "astId": 7738,
+          "type": "t_mapping<t_bool>",
+          "src": "1089:53:22"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "PoolDai": {
+      "address": "0x932773aE4B661029704e731722CF8129e1B32494",
+      "constructorCode": "608060405234801561001057600080fd5b5061498d806100206000396000f3fe",
+      "bodyBytecodeHash": "67e9887edc2ca93439ed4572d8b04df5ef282a9feeff427fc7fd9a21ed1f0f41",
+      "localBytecodeHash": "5f18d2aa3d91176f479167d818c7373f9387f2b898ba9b98ced71b61884fd69f",
+      "deployedBytecodeHash": "7c1a7cdae361fa86a3880fed5a93b4e1d07b544329852fe72850f2a985319a11",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_mapping<t_uint256>": {
+          "id": "t_mapping<t_uint256>",
+          "valueType": "t_uint256",
+          "label": "mapping(key => uint256)",
+          "kind": "mapping"
+        },
+        "t_struct<BasePool.Draw>": {
+          "id": "t_struct<BasePool.Draw>",
+          "kind": "struct",
+          "label": "BasePool.Draw",
+          "members": [
+            {
+              "label": "feeFraction",
+              "astId": 3254,
+              "type": "t_uint256",
+              "src": "6878:19:17"
+            },
+            {
+              "label": "feeBeneficiary",
+              "astId": 3256,
+              "type": "t_address",
+              "src": "6920:22:17"
+            },
+            {
+              "label": "openedBlock",
+              "astId": 3258,
+              "type": "t_uint256",
+              "src": "6948:19:17"
+            },
+            {
+              "label": "secretHash",
+              "astId": 3260,
+              "type": "t_bytes32",
+              "src": "6973:18:17"
+            },
+            {
+              "label": "entropy",
+              "astId": 3262,
+              "type": "t_bytes32",
+              "src": "6997:15:17"
+            },
+            {
+              "label": "winner",
+              "astId": 3264,
+              "type": "t_address",
+              "src": "7018:14:17"
+            },
+            {
+              "label": "netWinnings",
+              "astId": 3266,
+              "type": "t_uint256",
+              "src": "7038:19:17"
+            },
+            {
+              "label": "fee",
+              "astId": 3268,
+              "type": "t_uint256",
+              "src": "7063:11:17"
+            }
+          ]
+        },
+        "t_bytes32": {
+          "id": "t_bytes32",
+          "kind": "elementary",
+          "label": "bytes32"
+        },
+        "t_mapping<t_struct<BasePool.Draw>>": {
+          "id": "t_mapping<t_struct<BasePool.Draw>>",
+          "valueType": "t_struct<BasePool.Draw>",
+          "label": "mapping(key => BasePool.Draw)",
+          "kind": "mapping"
+        },
+        "t_struct<DrawManager.State>": {
+          "id": "t_struct<DrawManager.State>",
+          "kind": "struct",
+          "label": "DrawManager.State",
+          "members": [
+            {
+              "label": "sortitionSumTrees",
+              "astId": 5255,
+              "type": "t_struct<SortitionSumTreeFactory.SortitionSumTrees>",
+              "src": "2060:59:19"
+            },
+            {
+              "label": "consolidatedDrawIndices",
+              "astId": 5259,
+              "type": "t_mapping<t_uint256>",
+              "src": "2230:51:19"
+            },
+            {
+              "label": "latestDrawIndices",
+              "astId": 5263,
+              "type": "t_mapping<t_uint256>",
+              "src": "2384:45:19"
+            },
+            {
+              "label": "__deprecated__drawTotals",
+              "astId": 5267,
+              "type": "t_mapping<t_uint256>",
+              "src": "2520:52:19"
+            },
+            {
+              "label": "openDrawIndex",
+              "astId": 5269,
+              "type": "t_uint256",
+              "src": "2646:21:19"
+            },
+            {
+              "label": "__deprecated__committedSupply",
+              "astId": 5271,
+              "type": "t_uint256",
+              "src": "2745:37:19"
+            }
+          ]
+        },
+        "t_struct<SortitionSumTreeFactory.SortitionSumTrees>": {
+          "id": "t_struct<SortitionSumTreeFactory.SortitionSumTrees>",
+          "kind": "struct",
+          "label": "SortitionSumTreeFactory.SortitionSumTrees",
+          "members": [
+            {
+              "label": "sortitionSumTrees",
+              "astId": 22,
+              "type": "t_mapping<t_struct<SortitionSumTreeFactory.SortitionSumTree>>",
+              "src": "1037:54:0"
+            }
+          ]
+        },
+        "t_struct<SortitionSumTreeFactory.SortitionSumTree>": {
+          "id": "t_struct<SortitionSumTreeFactory.SortitionSumTree>",
+          "kind": "struct",
+          "label": "SortitionSumTreeFactory.SortitionSumTree",
+          "members": [
+            {
+              "label": "K",
+              "astId": 3,
+              "type": "t_uint256",
+              "src": "442:6:0"
+            },
+            {
+              "label": "stack",
+              "astId": 6,
+              "type": "t_array:dyn<t_uint256>",
+              "src": "690:12:0"
+            },
+            {
+              "label": "nodes",
+              "astId": 9,
+              "type": "t_array:dyn<t_uint256>",
+              "src": "712:12:0"
+            },
+            {
+              "label": "IDsToNodeIndexes",
+              "astId": 13,
+              "type": "t_mapping<t_uint256>",
+              "src": "878:41:0"
+            },
+            {
+              "label": "nodeIndexesToIDs",
+              "astId": 17,
+              "type": "t_mapping<t_bytes32>",
+              "src": "929:41:0"
+            }
+          ]
+        },
+        "t_array:dyn<t_uint256>": {
+          "id": "t_array:dyn<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "dyn",
+          "kind": "array",
+          "label": "uint256[]"
+        },
+        "t_mapping<t_bytes32>": {
+          "id": "t_mapping<t_bytes32>",
+          "valueType": "t_bytes32",
+          "label": "mapping(key => bytes32)",
+          "kind": "mapping"
+        },
+        "t_mapping<t_struct<SortitionSumTreeFactory.SortitionSumTree>>": {
+          "id": "t_mapping<t_struct<SortitionSumTreeFactory.SortitionSumTree>>",
+          "valueType": "t_struct<SortitionSumTreeFactory.SortitionSumTree>",
+          "label": "mapping(key => SortitionSumTreeFactory.SortitionSumTree)",
+          "kind": "mapping"
+        },
+        "t_struct<Roles.Role>": {
+          "id": "t_struct<Roles.Role>",
+          "kind": "struct",
+          "label": "Roles.Role",
+          "members": [
+            {
+              "label": "bearer",
+              "astId": 752,
+              "type": "t_mapping<t_bool>",
+              "src": "150:32:2"
+            }
+          ]
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        },
+        "t_struct<Blocklock.State>": {
+          "id": "t_struct<Blocklock.State>",
+          "kind": "struct",
+          "label": "Blocklock.State",
+          "members": [
+            {
+              "label": "lockedAt",
+              "astId": 5037,
+              "type": "t_uint256",
+              "src": "481:16:18"
+            },
+            {
+              "label": "unlockedAt",
+              "astId": 5039,
+              "type": "t_uint256",
+              "src": "503:18:18"
+            },
+            {
+              "label": "lockDuration",
+              "astId": 5041,
+              "type": "t_uint256",
+              "src": "527:20:18"
+            },
+            {
+              "label": "cooldownDuration",
+              "astId": 5043,
+              "type": "t_uint256",
+              "src": "553:24:18"
+            }
+          ]
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 3054,
+          "type": "t_bool",
+          "src": "757:24:16"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 3056,
+          "type": "t_bool",
+          "src": "876:25:16"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 3112,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:16"
+        },
+        {
+          "contract": "ReentrancyGuard",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/utils/ReentrancyGuard.sol",
+          "label": "_guardCounter",
+          "astId": 3016,
+          "type": "t_uint256",
+          "src": "733:29:15"
+        },
+        {
+          "contract": "ReentrancyGuard",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/utils/ReentrancyGuard.sol",
+          "label": "______gap",
+          "astId": 3049,
+          "type": "t_array:50<t_uint256>",
+          "src": "1563:29:15"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "cToken",
+          "astId": 3271,
+          "type": "t_address",
+          "src": "7148:21:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "nextFeeBeneficiary",
+          "astId": 3273,
+          "type": "t_address",
+          "src": "7240:33:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "nextFeeFraction",
+          "astId": 3275,
+          "type": "t_uint256",
+          "src": "7341:30:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "accountedBalance",
+          "astId": 3277,
+          "type": "t_uint256",
+          "src": "7419:31:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "balances",
+          "astId": 3281,
+          "type": "t_mapping<t_uint256>",
+          "src": "7519:46:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "draws",
+          "astId": 3285,
+          "type": "t_mapping<t_struct<BasePool.Draw>>",
+          "src": "7628:39:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "drawState",
+          "astId": 3287,
+          "type": "t_struct<DrawManager.State>",
+          "src": "7752:36:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "admins",
+          "astId": 3289,
+          "type": "t_struct<Roles.Role>",
+          "src": "7852:26:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "paused",
+          "astId": 3291,
+          "type": "t_bool",
+          "src": "7931:18:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "blocklock",
+          "astId": 3293,
+          "type": "t_struct<Blocklock.State>",
+          "src": "7954:34:17"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "poolToken",
+          "astId": 3295,
+          "type": "t_address",
+          "src": "7993:26:17"
+        },
+        {
+          "contract": "MCDAwarePool",
+          "path": "contracts/MCDAwarePool.sol",
+          "label": "scdMcdMigration",
+          "astId": 6322,
+          "type": "t_address",
+          "src": "2148:38:20"
+        },
+        {
+          "contract": "MCDAwarePool",
+          "path": "contracts/MCDAwarePool.sol",
+          "label": "saiPool",
+          "astId": 6324,
+          "type": "t_address",
+          "src": "2253:27:20"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "PoolUsdcToken": {
+      "address": "0x7acBE5d1d45A6494828bdEB7bF0a3116353efaD6",
+      "constructorCode": "608060405234801561001057600080fd5b50613078806100206000396000f3fe",
+      "bodyBytecodeHash": "c78f2dd3de4c02aad4700bae2256812a7d280f626b43959a2c32ba32e52d2203",
+      "localBytecodeHash": "037e75a7e93dc128ab835722b8fd7ea091fd4000e7d766470b0135ca63fa65dc",
+      "deployedBytecodeHash": "037e75a7e93dc128ab835722b8fd7ea091fd4000e7d766470b0135ca63fa65dc",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_string": {
+          "id": "t_string",
+          "kind": "elementary",
+          "label": "string"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        },
+        "t_mapping<t_uint256>": {
+          "id": "t_mapping<t_uint256>",
+          "valueType": "t_uint256",
+          "label": "mapping(key => uint256)",
+          "kind": "mapping"
+        },
+        "t_uint8": {
+          "id": "t_uint8",
+          "kind": "elementary",
+          "label": "uint8"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 3005,
+          "type": "t_bool",
+          "src": "757:24:15"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 3007,
+          "type": "t_bool",
+          "src": "876:25:15"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 3063,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:15"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_name",
+          "astId": 6595,
+          "type": "t_string",
+          "src": "3439:21:20"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_symbol",
+          "astId": 6597,
+          "type": "t_string",
+          "src": "3464:23:20"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_defaultOperatorsArray",
+          "astId": 6600,
+          "type": "t_array:dyn<t_address>",
+          "src": "3582:41:20"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_defaultOperators",
+          "astId": 6604,
+          "type": "t_mapping<t_bool>",
+          "src": "3713:51:20"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_operators",
+          "astId": 6610,
+          "type": "t_mapping<t_bool>",
+          "src": "3850:64:20"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_revokedDefaultOperators",
+          "astId": 6616,
+          "type": "t_mapping<t_bool>",
+          "src": "3918:78:20"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_allowances",
+          "astId": 6622,
+          "type": "t_mapping<t_uint256>",
+          "src": "4023:70:20"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_pool",
+          "astId": 6624,
+          "type": "t_address",
+          "src": "4140:23:20"
+        },
+        {
+          "contract": "PoolToken",
+          "path": "contracts/PoolToken.sol",
+          "label": "_decimals",
+          "astId": 6626,
+          "type": "t_uint8",
+          "src": "4359:24:20"
+        },
+        {
+          "contract": "RecipientWhitelistPoolToken",
+          "path": "contracts/RecipientWhitelistPoolToken.sol",
+          "label": "_recipientWhitelistEnabled",
+          "astId": 7747,
+          "type": "t_bool",
+          "src": "978:40:21"
+        },
+        {
+          "contract": "RecipientWhitelistPoolToken",
+          "path": "contracts/RecipientWhitelistPoolToken.sol",
+          "label": "_recipientWhitelist",
+          "astId": 7751,
+          "type": "t_mapping<t_bool>",
+          "src": "1089:53:21"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "PoolUsdc": {
+      "address": "0x1b9cf2bDaeCD0c597391943f3ff8ba771A692D41",
+      "constructorCode": "608060405234801561001057600080fd5b50614998806100206000396000f3fe",
+      "bodyBytecodeHash": "96c2037b74f1cc46a0ee6458b8d516fd6115278908807dd38ead32b10a0efde5",
+      "localBytecodeHash": "7081eac505d196ac045487778627267c0350b4d4a578f86712f84e0e018af2b2",
+      "deployedBytecodeHash": "b6236e70405ddc0e3c94fbcd94aa7b26c44074ea92ad7bb6cd27d10f71d18f83",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_mapping<t_uint256>": {
+          "id": "t_mapping<t_uint256>",
+          "valueType": "t_uint256",
+          "label": "mapping(key => uint256)",
+          "kind": "mapping"
+        },
+        "t_struct<BasePool.Draw>": {
+          "id": "t_struct<BasePool.Draw>",
+          "kind": "struct",
+          "label": "BasePool.Draw",
+          "members": [
+            {
+              "label": "feeFraction",
+              "astId": 3205,
+              "type": "t_uint256",
+              "src": "6878:19:16"
+            },
+            {
+              "label": "feeBeneficiary",
+              "astId": 3207,
+              "type": "t_address",
+              "src": "6920:22:16"
+            },
+            {
+              "label": "openedBlock",
+              "astId": 3209,
+              "type": "t_uint256",
+              "src": "6948:19:16"
+            },
+            {
+              "label": "secretHash",
+              "astId": 3211,
+              "type": "t_bytes32",
+              "src": "6973:18:16"
+            },
+            {
+              "label": "entropy",
+              "astId": 3213,
+              "type": "t_bytes32",
+              "src": "6997:15:16"
+            },
+            {
+              "label": "winner",
+              "astId": 3215,
+              "type": "t_address",
+              "src": "7018:14:16"
+            },
+            {
+              "label": "netWinnings",
+              "astId": 3217,
+              "type": "t_uint256",
+              "src": "7038:19:16"
+            },
+            {
+              "label": "fee",
+              "astId": 3219,
+              "type": "t_uint256",
+              "src": "7063:11:16"
+            }
+          ]
+        },
+        "t_bytes32": {
+          "id": "t_bytes32",
+          "kind": "elementary",
+          "label": "bytes32"
+        },
+        "t_mapping<t_struct<BasePool.Draw>>": {
+          "id": "t_mapping<t_struct<BasePool.Draw>>",
+          "valueType": "t_struct<BasePool.Draw>",
+          "label": "mapping(key => BasePool.Draw)",
+          "kind": "mapping"
+        },
+        "t_struct<DrawManager.State>": {
+          "id": "t_struct<DrawManager.State>",
+          "kind": "struct",
+          "label": "DrawManager.State",
+          "members": [
+            {
+              "label": "sortitionSumTrees",
+              "astId": 5214,
+              "type": "t_struct<SortitionSumTreeFactory.SortitionSumTrees>",
+              "src": "2060:59:18"
+            },
+            {
+              "label": "consolidatedDrawIndices",
+              "astId": 5218,
+              "type": "t_mapping<t_uint256>",
+              "src": "2230:51:18"
+            },
+            {
+              "label": "latestDrawIndices",
+              "astId": 5222,
+              "type": "t_mapping<t_uint256>",
+              "src": "2384:45:18"
+            },
+            {
+              "label": "__deprecated__drawTotals",
+              "astId": 5226,
+              "type": "t_mapping<t_uint256>",
+              "src": "2520:52:18"
+            },
+            {
+              "label": "openDrawIndex",
+              "astId": 5228,
+              "type": "t_uint256",
+              "src": "2646:21:18"
+            },
+            {
+              "label": "__deprecated__committedSupply",
+              "astId": 5230,
+              "type": "t_uint256",
+              "src": "2745:37:18"
+            }
+          ]
+        },
+        "t_struct<SortitionSumTreeFactory.SortitionSumTrees>": {
+          "id": "t_struct<SortitionSumTreeFactory.SortitionSumTrees>",
+          "kind": "struct",
+          "label": "SortitionSumTreeFactory.SortitionSumTrees",
+          "members": [
+            {
+              "label": "sortitionSumTrees",
+              "astId": 22,
+              "type": "t_mapping<t_struct<SortitionSumTreeFactory.SortitionSumTree>>",
+              "src": "1037:54:0"
+            }
+          ]
+        },
+        "t_struct<SortitionSumTreeFactory.SortitionSumTree>": {
+          "id": "t_struct<SortitionSumTreeFactory.SortitionSumTree>",
+          "kind": "struct",
+          "label": "SortitionSumTreeFactory.SortitionSumTree",
+          "members": [
+            {
+              "label": "K",
+              "astId": 3,
+              "type": "t_uint256",
+              "src": "442:6:0"
+            },
+            {
+              "label": "stack",
+              "astId": 6,
+              "type": "t_array:dyn<t_uint256>",
+              "src": "690:12:0"
+            },
+            {
+              "label": "nodes",
+              "astId": 9,
+              "type": "t_array:dyn<t_uint256>",
+              "src": "712:12:0"
+            },
+            {
+              "label": "IDsToNodeIndexes",
+              "astId": 13,
+              "type": "t_mapping<t_uint256>",
+              "src": "878:41:0"
+            },
+            {
+              "label": "nodeIndexesToIDs",
+              "astId": 17,
+              "type": "t_mapping<t_bytes32>",
+              "src": "929:41:0"
+            }
+          ]
+        },
+        "t_array:dyn<t_uint256>": {
+          "id": "t_array:dyn<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "dyn",
+          "kind": "array",
+          "label": "uint256[]"
+        },
+        "t_mapping<t_bytes32>": {
+          "id": "t_mapping<t_bytes32>",
+          "valueType": "t_bytes32",
+          "label": "mapping(key => bytes32)",
+          "kind": "mapping"
+        },
+        "t_mapping<t_struct<SortitionSumTreeFactory.SortitionSumTree>>": {
+          "id": "t_mapping<t_struct<SortitionSumTreeFactory.SortitionSumTree>>",
+          "valueType": "t_struct<SortitionSumTreeFactory.SortitionSumTree>",
+          "label": "mapping(key => SortitionSumTreeFactory.SortitionSumTree)",
+          "kind": "mapping"
+        },
+        "t_struct<Roles.Role>": {
+          "id": "t_struct<Roles.Role>",
+          "kind": "struct",
+          "label": "Roles.Role",
+          "members": [
+            {
+              "label": "bearer",
+              "astId": 752,
+              "type": "t_mapping<t_bool>",
+              "src": "150:32:2"
+            }
+          ]
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        },
+        "t_struct<Blocklock.State>": {
+          "id": "t_struct<Blocklock.State>",
+          "kind": "struct",
+          "label": "Blocklock.State",
+          "members": [
+            {
+              "label": "lockedAt",
+              "astId": 4996,
+              "type": "t_uint256",
+              "src": "481:16:17"
+            },
+            {
+              "label": "unlockedAt",
+              "astId": 4998,
+              "type": "t_uint256",
+              "src": "503:18:17"
+            },
+            {
+              "label": "lockDuration",
+              "astId": 5000,
+              "type": "t_uint256",
+              "src": "527:20:17"
+            },
+            {
+              "label": "cooldownDuration",
+              "astId": 5002,
+              "type": "t_uint256",
+              "src": "553:24:17"
+            }
+          ]
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 3005,
+          "type": "t_bool",
+          "src": "757:24:15"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 3007,
+          "type": "t_bool",
+          "src": "876:25:15"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 3063,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:15"
+        },
+        {
+          "contract": "ReentrancyGuard",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/utils/ReentrancyGuard.sol",
+          "label": "_guardCounter",
+          "astId": 2967,
+          "type": "t_uint256",
+          "src": "733:29:14"
+        },
+        {
+          "contract": "ReentrancyGuard",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/utils/ReentrancyGuard.sol",
+          "label": "______gap",
+          "astId": 3000,
+          "type": "t_array:50<t_uint256>",
+          "src": "1563:29:14"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "cToken",
+          "astId": 3222,
+          "type": "t_address",
+          "src": "7148:21:16"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "nextFeeBeneficiary",
+          "astId": 3224,
+          "type": "t_address",
+          "src": "7240:33:16"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "nextFeeFraction",
+          "astId": 3226,
+          "type": "t_uint256",
+          "src": "7341:30:16"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "accountedBalance",
+          "astId": 3228,
+          "type": "t_uint256",
+          "src": "7419:31:16"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "balances",
+          "astId": 3232,
+          "type": "t_mapping<t_uint256>",
+          "src": "7519:46:16"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "draws",
+          "astId": 3236,
+          "type": "t_mapping<t_struct<BasePool.Draw>>",
+          "src": "7628:39:16"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "drawState",
+          "astId": 3238,
+          "type": "t_struct<DrawManager.State>",
+          "src": "7752:36:16"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "admins",
+          "astId": 3240,
+          "type": "t_struct<Roles.Role>",
+          "src": "7852:26:16"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "paused",
+          "astId": 3242,
+          "type": "t_bool",
+          "src": "7931:18:16"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "blocklock",
+          "astId": 3244,
+          "type": "t_struct<Blocklock.State>",
+          "src": "7954:34:16"
+        },
+        {
+          "contract": "BasePool",
+          "path": "contracts/BasePool.sol",
+          "label": "poolToken",
+          "astId": 3246,
+          "type": "t_address",
+          "src": "7993:26:16"
+        },
+        {
+          "contract": "MCDAwarePool",
+          "path": "contracts/MCDAwarePool.sol",
+          "label": "scdMcdMigration",
+          "astId": 6281,
+          "type": "t_address",
+          "src": "2148:38:19"
+        },
+        {
+          "contract": "MCDAwarePool",
+          "path": "contracts/MCDAwarePool.sol",
+          "label": "saiPool",
+          "astId": 6283,
+          "type": "t_address",
+          "src": "2253:27:19"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {
+    "DrawManager": {
+      "address": "0xA3482AbAaB96Bb93a421bCaED3151401EE36C568",
+      "constructorCode": "61171c610026600b82828239805160001a60731461001957fe5b30600052607381538281f3fe",
+      "bodyBytecodeHash": "0293a62bcd3422e2b67826d63ddc9f37f2d43f5441694309a4f39e552b1bdc3b",
+      "localBytecodeHash": "d141f5947a30fdbbd9a466f8498ef2892159bc79f8af463f0fa3370432b7af1c",
+      "deployedBytecodeHash": "d141f5947a30fdbbd9a466f8498ef2892159bc79f8af463f0fa3370432b7af1c"
+    },
+    "FixidityLib": {
+      "address": "0x92cA02E97CAf1C94AB3A51FaaAA409b026067113",
+      "constructorCode": "610960610026600b82828239805160001a60731461001957fe5b30600052607381538281f3fe",
+      "bodyBytecodeHash": "e1674b3405e5bdbf970297016ac3a3f167e5ac8e8f19e11bb767e02321f35d24",
+      "localBytecodeHash": "30603a9262ad0eebffc221b8b7081d5bfdba5f5e5d1c134802ca286b61d65f46",
+      "deployedBytecodeHash": "30603a9262ad0eebffc221b8b7081d5bfdba5f5e5d1c134802ca286b61d65f46"
+    },
+    "Blocklock": {
+      "address": "0x533Da53d2cf270056B8427D1A5812FFe2cDCa2dB",
+      "constructorCode": "6103d8610026600b82828239805160001a60731461001957fe5b30600052607381538281f3fe",
+      "bodyBytecodeHash": "b238b0f9f6178ca56e381c29bee7b13b076db931470bdf7f62eaec48fd525ac2",
+      "localBytecodeHash": "229942cef2eddf5ea4bf044da2942ce3c4918f8f419dc2f217b60eaac73941f6",
+      "deployedBytecodeHash": "229942cef2eddf5ea4bf044da2942ce3c4918f8f419dc2f217b60eaac73941f6"
+    }
+  },
+  "proxies": {
+    "infd/PoolSai": [
+      {
+        "address": "0xb7896fce748396EcFC240F5a0d3Cc92ca42D7d84",
+        "version": "0.2",
+        "implementation": "0xdD581eB0779196C43f64084a84f98DD496626b71",
+        "admin": "0x332C822F3E95DF42010512012A913973b959b71E",
+        "kind": "Upgradeable"
+      }
+    ],
+    "infd/PoolSaiToken": [
+      {
+        "address": "0xfE6892654CBB05eB73d28DCc1Ff938f59666Fe9f",
+        "version": "0.2",
+        "implementation": "0xbACF2e665B37F713C159705F59f5349F78858C2d",
+        "admin": "0x332C822F3E95DF42010512012A913973b959b71E",
+        "kind": "Upgradeable"
+      }
+    ],
+    "infd/PoolDai": [
+      {
+        "address": "0x29fe7D60DdF151E5b52e5FAB4f1325da6b2bD958",
+        "version": "0.2",
+        "implementation": "0x932773aE4B661029704e731722CF8129e1B32494",
+        "admin": "0x332C822F3E95DF42010512012A913973b959b71E",
+        "kind": "Upgradeable"
+      }
+    ],
+    "infd/PoolDaiToken": [
+      {
+        "address": "0x49d716DFe60b37379010A75329ae09428f17118d",
+        "version": "0.2",
+        "implementation": "0x5d6bdEb18BA6E2be5Cb87C7cFAee9CD07d000428",
+        "admin": "0x332C822F3E95DF42010512012A913973b959b71E",
+        "kind": "Upgradeable"
+      }
+    ],
+    "infd/PoolUsdc": [
+      {
+        "address": "0x0034Ea9808E620A0EF79261c51AF20614B742B24",
+        "version": "0.2",
+        "implementation": "0x1b9cf2bDaeCD0c597391943f3ff8ba771A692D41",
+        "admin": "0x332C822F3E95DF42010512012A913973b959b71E",
+        "kind": "Upgradeable"
+      }
+    ],
+    "infd/PoolUsdcToken": [
+      {
+        "address": "0xBD87447F48ad729C5c4b8bcb503e1395F62e8B98",
+        "version": "0.2",
+        "implementation": "0x7acBE5d1d45A6494828bdEB7bF0a3116353efaD6",
+        "admin": "0x332C822F3E95DF42010512012A913973b959b71E",
+        "kind": "Upgradeable"
+      }
+    ]
+  },
+  "manifestVersion": "2.2",
+  "version": "0.2",
+  "proxyAdmin": {
+    "address": "0x332C822F3E95DF42010512012A913973b959b71E"
+  }
+}
