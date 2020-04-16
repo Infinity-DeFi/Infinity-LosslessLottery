@@ -386,6 +386,13 @@
     lodash.camelcase "^4.3.0"
     protobufjs "^6.8.6"
 
+"@infd/oz-migrate@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@infd/oz-migrate/-/oz-migrate-0.2.5.tgz#fc729cbfe9dcb65cfd7a324a9b85b5e4ad31f70c"
+  integrity sha512-j3LubUgnyLUAzJPO0GwipRbdJLTI7FTVvFK0OCUk+qgJ+lm1egXJ0FqigkKgg5ZyK+WSUq5fYKbWEvKos7RbNQ==
+  dependencies:
+    mkdirp "^0.5.0"
+
 "@kleros/kleros-interaction@^0.9.0":
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/@kleros/kleros-interaction/-/kleros-interaction-0.9.0.tgz#c7e0074bb66f06a1a00cf794b4152af2e27b2a8c"
@@ -692,13 +699,6 @@
     web3-eth "1.2.2"
     web3-eth-contract "1.2.2"
     web3-utils "1.2.2"
-
-"@infd/oz-migrate@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@infd/oz-migrate/-/oz-migrate-0.2.5.tgz#fc729cbfe9dcb65cfd7a324a9b85b5e4ad31f70c"
-  integrity sha512-j3LubUgnyLUAzJPO0GwipRbdJLTI7FTVvFK0OCUk+qgJ+lm1egXJ0FqigkKgg5ZyK+WSUq5fYKbWEvKos7RbNQ==
-  dependencies:
-    mkdirp "^0.5.0"
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
@@ -4967,9 +4967,9 @@ http-signature@~1.2.0:
     sshpk "^1.7.0"
 
 https-proxy-agent@^2.2.1:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-2.2.2.tgz#271ea8e90f836ac9f119daccd39c19ff7dfb0793"
-  integrity sha512-c8Ndjc9Bkpfx/vCJueCPy0jlP4ccCCSNDp8xwCZzPjKJUm+B+u9WX2x98Qx4n1PiMNTWo3D7KK5ifNV/yJyRzg==
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-2.2.4.tgz#4ee7a737abd92678a293d9b34a1af4d0d08c787b"
+  integrity sha512-OmvfoQ53WLjtA9HeYP9RNrWMJzzAz1JGaSFr1nijg0PVR1JaD/xbJq1mdEIIlxGpXp9eSe/O2LgU9DJmTPd0Eg==
   dependencies:
     agent-base "^4.3.0"
     debug "^3.1.0"
