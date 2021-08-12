@@ -180,6 +180,24 @@
     lodash.camelcase "^4.3.0"
     protobufjs "^6.8.6"
 
+"@infd/infd-contracts@0.2.7":
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/@infd/infd-contracts/-/infd-contracts-0.2.7.tgz#c30d2b50f9c50e6df447e8ffd4373001d8ccc264"
+  integrity sha512-V/YA0JgbL/byBnkIU5ZE8yxIbXl4HaZzJ1szRmrM9i9anZXbDVNGMpqORG8c7OeuRcao/W/UX5jaFqvp+g37Wg==
+  dependencies:
+    "@kleros/kleros" DeltaCamp/kleros#ca7fbdcc195cfd1267efb99aae905c3400a5ea5f
+    "@openzeppelin/contracts-ethereum-package" "2.4.0"
+    "@openzeppelin/upgrades" "2.5.1"
+    fixidity DeltaCamp/Fixidity#edf533f77df43b16a7b92f17af7a8930db01f293
+    scd-mcd-migration infd/scd-mcd-migration
+
+"@infd/oz-migrate@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@infd/oz-migrate/-/oz-migrate-0.2.5.tgz#fc729cbfe9dcb65cfd7a324a9b85b5e4ad31f70c"
+  integrity sha512-j3LubUgnyLUAzJPO0GwipRbdJLTI7FTVvFK0OCUk+qgJ+lm1egXJ0FqigkKgg5ZyK+WSUq5fYKbWEvKos7RbNQ==
+  dependencies:
+    mkdirp "^0.5.0"
+
 "@kleros/kleros-interaction@^0.9.0":
   version "0.9.3"
   resolved "https://registry.yarnpkg.com/@kleros/kleros-interaction/-/kleros-interaction-0.9.3.tgz#c75879a835cc2e8885263ced5a5756d4498f0efa"
@@ -472,24 +490,6 @@
     web3-eth "1.2.2"
     web3-eth-contract "1.2.2"
     web3-utils "1.2.2"
-
-"@infd/oz-migrate@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@infd/oz-migrate/-/oz-migrate-0.2.5.tgz#fc729cbfe9dcb65cfd7a324a9b85b5e4ad31f70c"
-  integrity sha512-j3LubUgnyLUAzJPO0GwipRbdJLTI7FTVvFK0OCUk+qgJ+lm1egXJ0FqigkKgg5ZyK+WSUq5fYKbWEvKos7RbNQ==
-  dependencies:
-    mkdirp "^0.5.0"
-
-"@infd/infd-contracts@0.2.7":
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/@infd/infd-contracts/-/infd-contracts-0.2.7.tgz#c30d2b50f9c50e6df447e8ffd4373001d8ccc264"
-  integrity sha512-V/YA0JgbL/byBnkIU5ZE8yxIbXl4HaZzJ1szRmrM9i9anZXbDVNGMpqORG8c7OeuRcao/W/UX5jaFqvp+g37Wg==
-  dependencies:
-    "@kleros/kleros" DeltaCamp/kleros#ca7fbdcc195cfd1267efb99aae905c3400a5ea5f
-    "@openzeppelin/contracts-ethereum-package" "2.4.0"
-    "@openzeppelin/upgrades" "2.5.1"
-    fixidity DeltaCamp/Fixidity#edf533f77df43b16a7b92f17af7a8930db01f293
-    scd-mcd-migration infd/scd-mcd-migration
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
@@ -5987,9 +5987,9 @@ path-key@^2.0.0, path-key@^2.0.1:
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
-  integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-to-regexp@0.1.7:
   version "0.1.7"
